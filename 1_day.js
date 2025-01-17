@@ -24,7 +24,31 @@ var createCounter = function (n) {
 
 //#region --To Be Or Not To Be--
 
+/**
+ * @param {string} val
+ * @return {Object}
+ */
+var expect = function (val) {
+    return {
+        toBe: (n) => {
+            if (val === n) {
+                return true
+            }
+            else {
+                throw new Error('Not Equal')
+            }
+        },
 
+        notToBe: (n) => {
+            if (val !== n) {
+                return true
+            }
+            else {
+                throw new Error('Equal')
+            }
+        }
+    }
+};
 //#endregion
 
 
