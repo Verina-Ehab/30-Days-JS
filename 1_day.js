@@ -54,5 +54,24 @@ var expect = function (val) {
 
 //#region --2665. Counter II--
 
+/**
+ * @param {integer} init
+ * @return { increment: Function, decrement: Function, reset: Function }
+ */
+var createCounter = function (init) {
+    let n = init
+    return {
+        increment: () => {
+            return ++n
+        },
+        decrement: () => {
+            return --n
+        },
+        reset: () => {
+            n = init
+            return init
+        }
+    }
 
+};
 //#endregion
